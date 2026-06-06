@@ -1,0 +1,138 @@
+/* About.module.css */
+
+.about {
+  background-color: var(--surface);
+  border-bottom: 1px solid rgba(199, 199, 188, 0.3); /* var(--outline-variant) */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+  }
+}
+
+/* Left Sidebar: Vertical Text */
+.verticalSidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .verticalSidebar {
+    display: flex;
+    grid-column: span 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.estText {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--outline);
+  opacity: 0.6;
+}
+
+/* Middle Content: Asymmetric Image Layout */
+.imageComposer {
+  grid-column: span 1;
+  position: relative;
+  height: 400px;
+}
+
+@media (min-width: 768px) {
+  .imageComposer {
+    grid-column: span 6;
+    height: 550px;
+  }
+}
+
+.imgFamily {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 65%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(199, 199, 188, 0.2);
+}
+
+.imgInterior {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(199, 199, 188, 0.2);
+  z-index: 10;
+}
+
+/* Right Content: Description Text */
+.textBlock {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .textBlock {
+    grid-column: span 5;
+    padding-left: 24px;
+  }
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.description p {
+  margin-bottom: 20px;
+}
+
+.btnArea {
+  margin-top: 24px;
+}

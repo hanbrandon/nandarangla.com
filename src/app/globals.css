@@ -1,0 +1,289 @@
+/* Premium CSS Design System - Nandarang LA */
+
+:root {
+  /* Colors - Warm Coffee & Cream (Light Mode) */
+  --primary: #941b0c;         /* Oxblood (Deep Vintage Wine) */
+  --primary-hover: #621708;   /* Dark Garnet */
+  --primary-light: #fdeee9;   /* Oxblood Light Tint */
+  --on-primary: #ffffff;
+  
+  --secondary: #bc3908;       /* Rusty Spice */
+  --background: #faf6f3;      /* Cozy Cream */
+  --surface: #ffffff;
+  --surface-container-low: #f5ede6;
+  --surface-container: #ebe0d5;
+  
+  --text-primary: #220901;    /* Coffee Bean */
+  --text-secondary: #621708;  /* Dark Garnet */
+  --text-on-primary: #ffffff;
+  
+  --outline: #bc3908;
+  --outline-variant: #ebe0d5;
+  
+  --error: #ba1a1a;
+  
+  /* Fonts */
+  --font-display: var(--font-display-google), 'Anton', sans-serif;
+  --font-body: var(--font-body-google), 'Source Sans 3', sans-serif;
+  
+  /* Spacing */
+  --unit: 8px;
+  --gutter: 24px;
+  --margin-mobile: 20px;
+  --margin-desktop: 64px;
+  --container-max: 1280px;
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s ease-out;
+}
+
+/* Dark Mode Color Palette - Spicy Roast & Crimson Theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #f6aa1c;       /* Vibrant Orange */
+    --primary-hover: #bc3908;  /* Rusty Spice */
+    --primary-light: #621708;  /* Dark Garnet */
+    --on-primary: #220901;    /* Coffee Bean */
+    
+    --secondary: #941b0c;     /* Oxblood */
+    --background: #220901;    /* Coffee Bean (Cozy Dark) */
+    --surface: #2d140e;       /* Roast Surface */
+    --surface-container-low: #3b1c14;
+    --surface-container: #4a231a;
+    
+    --text-primary: #faf8f6;  /* Soft Warm White */
+    --text-secondary: #dcd3cb; /* Light Warm Beige */
+    --text-on-primary: #220901;
+    
+    --outline: #621708;
+    --outline-variant: #4a231a;
+  }
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Accessibility: Keyboard Navigation Outline */
+*:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 12px 24px;
+  z-index: 1000;
+  transition: top 0.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Global Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}
+
+/* Section styling */
+.section {
+  padding: 80px 0;
+  overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 120px 0;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.75rem;
+  }
+}
+
+/* Micro-animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(246, 170, 28, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--outline);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Header & Nav */
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Vertical Text (EST. 1988 layout) */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+/* Dotted Leader for Menu */
+.menu-leader {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--outline-variant);
+  margin: 0 12px;
+  position: relative;
+  top: -6px;
+}

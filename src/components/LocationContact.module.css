@@ -1,0 +1,243 @@
+/* LocationContact.module.css */
+
+.contactSection {
+  background-color: var(--surface);
+  border-bottom: 1px solid rgba(199, 199, 188, 0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 64px;
+  }
+}
+
+/* Map area */
+.mapContainer {
+  grid-column: span 1;
+  position: relative;
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(199, 199, 188, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background:
+    linear-gradient(rgba(34, 9, 1, 0.35), rgba(34, 9, 1, 0.55)),
+    url("/nandarang-koreatown-facade.jpg") center / cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+@media (min-width: 1024px) {
+  .mapContainer {
+    grid-column: span 6;
+    height: 500px;
+  }
+}
+
+.mapCard {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(250, 246, 243, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 24px;
+  color: #220901;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mapEyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.mapAddress {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+  .mapContainer {
+    padding: 16px;
+  }
+
+  .mapCard {
+    padding: 20px;
+  }
+
+  .mapAddress {
+    font-size: 1.5rem;
+  }
+}
+
+/* Info Details */
+.infoArea {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .infoArea {
+    grid-column: span 6;
+  }
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.blockTitle {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.blockText {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.blockText a {
+  transition: var(--transition-fast);
+}
+
+.blockText a:hover {
+  color: var(--primary);
+}
+
+/* Valet Info Card Styling */
+.valetBlock {
+  grid-column: 1 / -1;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  padding: 28px;
+  border-radius: 8px;
+  margin-top: 16px;
+  box-shadow: 0 10px 30px rgba(246, 170, 28, 0.08);
+}
+
+.valetTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+  color: var(--on-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.valetIcon {
+  color: var(--on-primary);
+  flex-shrink: 0;
+}
+
+.valetRates {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.rate {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--on-primary);
+  opacity: 0.9;
+}
+
+.rate strong {
+  color: var(--on-primary);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.streetParking {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-primary);
+  opacity: 0.75;
+  font-style: italic;
+}
+
+/* Social links */
+.socialLinks {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.socialBtn {
+  color: var(--text-secondary);
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.socialBtn:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
