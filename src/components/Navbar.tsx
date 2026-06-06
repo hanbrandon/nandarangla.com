@@ -11,9 +11,11 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
-  { label: "Food Gallery", href: "#gallery" },
+  { label: "About", href: "#about" },
   { label: "Menu", href: "#menu" },
-  { label: "Contact Us", href: "#contact" }
+  { label: "Gallery", href: "#gallery" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export default function Navbar() {

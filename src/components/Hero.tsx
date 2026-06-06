@@ -58,22 +58,19 @@ export default function Hero() {
 
           {/* Heading */}
           <motion.h1 className={styles.title} variants={itemVariants}>
-            Welcome to <br />
-            Nandarang Restaurant & Bar
+            Nandarang Korean Restaurant & Bar in Koreatown LA
           </motion.h1>
 
           {/* Content Description */}
           <motion.div className={styles.subtitle} variants={itemVariants}>
             <div className={styles.paragraphs}>
               <p>
-                We are dedicated to serving you the finest and most authentic traditional Korean cuisine, 
-                as well as exciting Korean fusion dishes that push culinary boundaries.
+                Since 1988, Nandarang has served Korean comfort food, fusion dishes, and late-night plates
+                in the heart of Koreatown Los Angeles.
               </p>
               <p>
-                To complement your dining experience, we offer an extensive selection of beverages. 
-                Quench your thirst with a variety of beers, including bottles, cans, and a rotating selection on tap. 
-                Our bar also boasts an impressive array of spirits, soju, wines, and handcrafted cocktails 
-                that perfectly complement the flavors of our cuisine.
+                Join us for daily happy hour, soju, cocktails, sake, spirits, draft beer, and Korean bar food
+                close to Wilshire, Western, and 6th Street.
               </p>
             </div>
           </motion.div>

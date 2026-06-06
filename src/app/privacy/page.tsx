@@ -5,6 +5,10 @@ import Navbar from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "Privacy Policy | Nandarang Restaurant & Bar",
   description: "Privacy policy for Nandarang Restaurant & Bar in Koreatown Los Angeles.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "https://nandarangla.com/privacy",
   },

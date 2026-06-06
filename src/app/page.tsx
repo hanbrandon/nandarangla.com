@@ -7,7 +7,7 @@ import About from "@/components/About";
 import MenuOverview from "@/components/MenuOverview";
 import LocationContact from "@/components/LocationContact";
 import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
+import FAQ, { faqData } from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
 import styles from "./page.module.css";
 
@@ -36,6 +36,7 @@ export default function Home() {
       "longitude": -118.30907
     },
     "url": "https://nandarangla.com",
+    "menu": "https://nandarangla.com/menu.pdf",
     "telephone": "+12133888513",
     "priceRange": "$$",
     "openingHoursSpecification": [
@@ -55,6 +56,21 @@ export default function Home() {
       }
     ],
     "servesCuisine": ["Korean", "Korean Fusion", "Korean Bar Food"],
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Nandarang menu",
+      "url": "https://nandarangla.com/menu.pdf",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Korean favorites and fusion plates"
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Draft beer, soju, sake, spirits, wine, and cocktails"
+        }
+      ]
+    },
     "hasMap": "https://maps.app.goo.gl/qQYP6GXVeyi1wq429",
     "paymentAccepted": "Cash, Credit Card",
     "currenciesAccepted": "USD",
@@ -70,40 +86,14 @@ export default function Home() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Nandarang LA known for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nandarang is a legendary Koreatown, Los Angeles institution established in 1988. We are famous for serving authentic traditional Korean dishes, creative Korean fusion specialties, and an extensive bar selection including draft beers, soju, and handcrafted cocktails."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where is Nandarang located and is there parking?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We are located at 3815 W 6th St, Los Angeles, CA 90020 (heart of Koreatown). Valet parking is available for our guests, and street parking can also be found in the surrounding area."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are Nandarang's hours of operation and Happy Hour?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We are open daily from 11:00 AM to 2:00 AM, making it the perfect spot for both lunch and late-night dining. Our popular Happy Hour runs every day from 12:00 PM to 7:00 PM, offering fantastic deals on select drinks and popular bar bites."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you accept reservations and takeout/delivery orders?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we welcome both walk-ins and table reservations. For those dining at home, you can easily order pickup or delivery directly through our website or by calling us at +1 (213) 388-8513."
-        }
+    "mainEntity": faqData.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
       }
-    ]
+    }))
   };
 
   return (
@@ -194,43 +184,43 @@ export default function Home() {
         {/* Menu Overview Section */}
         <MenuOverview />
 
-        {/* Guest Stories / Testimonials Section */}
+        {/* Guest Experience Section */}
         <section className={`section ${styles.testimonialsSection}`} id="testimonials" aria-labelledby="testimonials-title">
           <div className="container">
             <div className="text-center" style={{ marginBottom: '64px' }}>
               <span className="btn-outline" style={{ pointerEvents: 'none', border: 'none', padding: '0', color: 'var(--primary)', letterSpacing: '0.2em' }}>
                 Guest Experience
               </span>
-              <h2 id="testimonials-title" className="section-title" style={{ marginTop: '8px' }}>Guest Stories</h2>
+              <h2 id="testimonials-title" className="section-title" style={{ marginTop: '8px' }}>Popular Visits</h2>
             </div>
 
             <div className={styles.testimonialsGrid}>
               
               <article className={styles.testimonialCard}>
-                <span className={styles.quoteIcon} aria-hidden="true">&ldquo;</span>
+                <span className={styles.quoteIcon} aria-hidden="true">01</span>
                 <p className={styles.quoteText}>
-                  An absolute revelation. The flavors are deeply traditional yet presented with such modern elegance. A true dining experience.
+                  Late-night Korean food after concerts, karaoke, and Koreatown plans, with the kitchen and bar open until 2 AM.
                 </p>
-                <h4 className={styles.author}>Eleanor R.</h4>
-                <span className={styles.verifiedBadge}>Verified Guest</span>
+                <h4 className={styles.author}>Late-Night Dining</h4>
+                <span className={styles.verifiedBadge}>Open Daily</span>
               </article>
 
               <article className={styles.testimonialCard}>
-                <span className={styles.quoteIcon} aria-hidden="true">&ldquo;</span>
+                <span className={styles.quoteIcon} aria-hidden="true">02</span>
                 <p className={styles.quoteText}>
-                  The Dolsot Bibimbap is a masterpiece. The crispiness of the rice and the quality of the ingredients are unparalleled in LA.
+                  Daily happy hour from 12 PM to 7 PM with Korean bar plates, beer, soju, cocktails, and shareable dishes.
                 </p>
-                <h4 className={styles.author}>James T.</h4>
-                <span className={styles.verifiedBadge}>Verified Guest</span>
+                <h4 className={styles.author}>Happy Hour</h4>
+                <span className={styles.verifiedBadge}>12PM-7PM</span>
               </article>
 
               <article className={styles.testimonialCard}>
-                <span className={styles.quoteIcon} aria-hidden="true">&ldquo;</span>
+                <span className={styles.quoteIcon} aria-hidden="true">03</span>
                 <p className={styles.quoteText}>
-                  Impeccable service and a serene atmosphere. Nandarang offers a quiet luxury that makes you feel completely transported.
+                  A Koreatown spot for classic Korean dishes, fusion plates, cocktails, and casual group dinners near W 6th Street.
                 </p>
-                <h4 className={styles.author}>Sophia M.</h4>
-                <span className={styles.verifiedBadge}>Verified Guest</span>
+                <h4 className={styles.author}>Group Dining</h4>
+                <span className={styles.verifiedBadge}>Koreatown LA</span>
               </article>
 
             </div>

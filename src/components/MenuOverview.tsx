@@ -40,6 +40,11 @@ interface ChefPick {
   image: string;
 }
 
+interface MenuGroup {
+  heading: string;
+  items: string[];
+}
+
 const chefPicks: ChefPick[] = [
   {
     name: "Signature Fried Chicken",
@@ -53,6 +58,45 @@ const chefPicks: ChefPick[] = [
     description: "A perfect marriage of East and West. Plump prawns, tender calamari, and fresh mussels tossed in our signature spicy gochujang rose cream sauce over al dente pasta, finished with fresh microgreens.",
     image: "/seafood-rose-pasta.jpg"
   }
+];
+
+const menuGroups: MenuGroup[] = [
+  {
+    heading: "Korean Favorites",
+    items: [
+      "Bulgogi with house-made sauce",
+      "Galbi marinated with house-made sauce",
+      "Dolsot kimchi fried rice",
+      "Udon and ramen noodle bowls",
+    ],
+  },
+  {
+    heading: "Fusion & Bar Plates",
+    items: [
+      "Bulgogi tacos with Korean BBQ rib-eye",
+      "Spicy pork bulgogi tacos",
+      "Pork cutlet with salad and rice",
+      "Corn cheese with cheddar and mozzarella",
+    ],
+  },
+  {
+    heading: "Salads & Shared Bites",
+    items: [
+      "Asian chicken salad with sesame dressing",
+      "Shrimp mandarin salad with raspberry walnut vinaigrette",
+      "Fried cuttlefish and dried filefish snacks",
+      "Shareable plates for happy hour and late-night dining",
+    ],
+  },
+  {
+    heading: "Drinks",
+    items: [
+      "Rotating draft beer and bottled beer",
+      "Soju, sake, wine, and Korean bar drinks",
+      "American, Scotch, Japanese, and Irish whiskey",
+      "Handcrafted cocktails from the full bar",
+    ],
+  },
 ];
 
 export default function MenuOverview() {
@@ -115,6 +159,39 @@ export default function MenuOverview() {
             </a>
           </div>
         </ScrollReveal>
+
+        {/* Search-friendly menu highlights */}
+        <div className={styles.menuHighlights} aria-labelledby="menu-highlights-title">
+          <ScrollReveal variant="fadeInUp" distance={20}>
+            <h3 id="menu-highlights-title" className={styles.highlightsTitle}>Menu Highlights</h3>
+            <p className={styles.highlightsIntro}>
+              Browse the full PDF menu for current availability. These highlights help guests quickly
+              understand the Korean food, fusion plates, happy hour bites, beer, soju, sake, and cocktail
+              options available at Nandarang in Koreatown LA.
+            </p>
+          </ScrollReveal>
+
+          <div className={styles.highlightsGrid}>
+            {menuGroups.map((group, index) => (
+              <ScrollReveal
+                key={group.heading}
+                variant="fadeInUp"
+                delay={index * 0.08}
+                className={styles.highlightCard}
+                distance={24}
+              >
+                <article>
+                  <h4 className={styles.highlightHeading}>{group.heading}</h4>
+                  <ul className={styles.highlightList}>
+                    {group.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
 
         {/* Chef's Picks Subsection */}
         <div className={styles.chefsPicks} aria-labelledby="picks-title">

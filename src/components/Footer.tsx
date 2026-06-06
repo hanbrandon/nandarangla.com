@@ -41,6 +41,15 @@ export default function Footer() {
           <div className={styles.linksArea}>
             <ul className={styles.linksList}>
               <li className={styles.linkItem}>
+                <a href="#menu">Menu Highlights</a>
+              </li>
+              <li className={styles.linkItem}>
+                <a href="/menu.pdf" target="_blank" rel="noopener noreferrer">Full Menu PDF</a>
+              </li>
+              <li className={styles.linkItem}>
+                <a href="#faq">FAQ</a>
+              </li>
+              <li className={styles.linkItem}>
                 <a href="/privacy">Privacy Policy</a>
               </li>
               <li className={styles.linkItem}>

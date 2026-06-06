@@ -48,11 +48,16 @@ export default function About() {
             <div className={styles.description}>
               <p>
                 We are a cherished family-owned institution that has been a cornerstone of 
-                the Los Angeles dining scene since our restaurant&apos;s opening in 1988.
+                the Koreatown Los Angeles dining scene since our restaurant&apos;s opening in 1988.
               </p>
               <p>
                 For over three decades, we have been committed to providing our customers 
                 with an unparalleled dining experience that is rooted in tradition and family values.
+              </p>
+              <p>
+                Our W 6th Street location brings together Korean comfort food, fusion plates,
+                happy hour drinks, and late-night hospitality for locals, visitors, and groups
+                exploring LA&apos;s K-town.
               </p>
             </div>
             <div className={styles.btnArea}>

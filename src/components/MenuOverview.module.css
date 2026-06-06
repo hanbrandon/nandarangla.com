@@ -142,6 +142,75 @@
   padding: 16px 40px;
 }
 
+/* Search-friendly Menu Highlights */
+.menuHighlights {
+  margin-top: 72px;
+  padding: 48px;
+  background-color: var(--surface);
+  border: 1px solid rgba(199, 199, 188, 0.25);
+  border-radius: 8px;
+}
+
+.highlightsTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.highlightsIntro {
+  max-width: 760px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .highlightsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.highlightCard {
+  height: 100%;
+  padding: 24px;
+  background-color: var(--surface-container-low);
+  border: 1px solid rgba(199, 199, 188, 0.22);
+  border-radius: 8px;
+}
+
+.highlightHeading {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.highlightList {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .menuHighlights {
+    padding: 28px 20px;
+  }
+}
+
 /* Chef's Picks (Sub Section) */
 .chefsPicks {
   margin-top: 100px;

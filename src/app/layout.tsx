@@ -18,9 +18,9 @@ const sourceSans3 = Source_Sans_3({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nandarangla.com"),
-  title: "Nandarang | Restaurant & Bar in Koreatown Los Angeles",
-  description: "Welcome to Nandarang Restaurant & Bar. Since 1988, we have been serving the finest traditional Korean cuisine and fusion dishes in the heart of Koreatown, Los Angeles. Pair your meal with our rotating beers, spirits, soju, and mixologist-crafted cocktails.",
-  keywords: "Nandarang, Korean Restaurant LA, Koreatown Bar, Korean Fusion, Los Angeles Korean Food, Koreatown Restaurant, Soju, Tap Beers LA",
+  title: "Nandarang Korean Restaurant & Bar | Koreatown LA Late Night Dining",
+  description: "Nandarang is a Korean restaurant and bar in Koreatown Los Angeles serving Korean food, fusion dishes, soju, cocktails, draft beer, daily happy hour, and late-night dining until 2 AM.",
+  keywords: "Nandarang, Korean restaurant Koreatown LA, Korean bar Los Angeles, Koreatown late night food, Korean fusion restaurant LA, soju bar Koreatown, happy hour Koreatown, Korean fried chicken Los Angeles, Korean restaurant near Wilshire Los Angeles",
   applicationName: "Nandarang Restaurant & Bar",
   authors: [{ name: "Nandarang Restaurant & Bar" }],
   creator: "Nandarang Restaurant & Bar",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
     apple: "/nandarang-favicon.png",
   },
   openGraph: {
-    title: "Nandarang | Restaurant & Bar in Koreatown Los Angeles",
-    description: "Serving authentic traditional Korean cuisine & innovative fusion dishes since 1988. Enjoy a full bar of craft beers, soju, sake, and handcrafted cocktails.",
+    title: "Nandarang Korean Restaurant & Bar | Koreatown LA",
+    description: "Koreatown LA Korean food, fusion dishes, happy hour, soju, cocktails, draft beer, and late-night dining until 2 AM.",
     url: "https://nandarangla.com",
     siteName: "Nandarang Restaurant & Bar",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/kimchi-fried-rice.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Nandarang Restaurant & Bar in Koreatown Los Angeles",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nandarang | Restaurant & Bar in Koreatown Los Angeles",
-    description: "Since 1988, a family-owned institution serving authentic traditional Korean cuisine and cocktails in Koreatown.",
-    images: ["/kimchi-fried-rice.jpg"],
+    title: "Nandarang Korean Restaurant & Bar | Koreatown LA",
+    description: "Korean food, soju, cocktails, happy hour, and late-night dining in Koreatown Los Angeles.",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://nandarangla.com",

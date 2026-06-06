@@ -30,6 +30,10 @@ export default function LocationContact() {
           <div className={styles.infoArea}>
             <span className={styles.tagline}>Find Your Way</span>
             <h2 id="contact-title" className={styles.title}>Visit Us</h2>
+            <p className={styles.blockText} style={{ marginBottom: "28px" }}>
+              Visit Nandarang on W 6th Street in Koreatown Los Angeles for lunch, dinner,
+              happy hour, late-night Korean food, cocktails, soju, and group dining.
+            </p>
 
             <div className={styles.infoGrid}>
               
